@@ -10,6 +10,8 @@ that is also compatible with VirtualiZarr and Icechunk (wip, really need to make
 
 GDAL 
 
+- best used in classic mode via {gdalraster}
+- gdalraster has an in-development support for GDALMultiDimRaster (our preferred support for the multimensional model)
 - can be imported as a python module with reticulate, osgeo.gdal supports the full multidimensional GDAL model
 - classic mode (raster as bands) can also be used with Zarr, but is less efficient than native multidim
 - imported as rasterio (classic mode  only)
@@ -23,7 +25,10 @@ zarrs
 
 We propose a two-pronged approach to improving the existing support for Zarr in R.
 
-1) Contribute to GDAL to ensure that the indirection needed by virtualized Zarr can be leveraged by the Zarr driver. Investigate the existing (and specified)
+1) Contribute to GDAL to ensure that the indirection needed by virtualized Zarr can be leveraged by the Zarr driver. Investigate the existing implemented
+ (and specified) ways of encoding crs and transform. Investigate scope for Icechunk compatibility.
+2) Create an R package to wrap zarrs.
+3) 
 
 ### Alternatives to consider 
 
